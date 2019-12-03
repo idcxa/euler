@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+	//int is_prime(long int num){
+	//	bool is_prime = true;
+	//	for (long int i=2;i<=num-1;i++) {
+	//		if (num%i==0) {
+	//			is_prime = false;
+	//			//cout << num << " " << is_prime << "\n";
+	//			return is_prime;
+	//		}
+	//	}
+	//	is_prime = true;
+	//	//cout << num << " " << is_prime << "\n";
+	//	printf("%c[2K", 27);
+	//	return is_prime;
+	//}
+	int is_prime(int x){
+		for(int n=2;n<=x-1;n++) {
+			if(x%n==0) {
+				break;
+			}
+			if (n == x) {
+				return 1;
+			} else {
+				return 0;
+			}
+		}
+
+	}
+
+	int sum_below(int below){
+		long long int sum = 0;
+		for (int i=2;i<=below;i=i+2) {
+			if (is_prime(i)==true) {
+				sum = sum + i;
+				cout << sum << " " << (i / 20000) << "%" << "\n";
+			}
+		}
+	return sum;
+	}
+
+    int main(){
+	    	cout << is_prime(10) << "\n";
+		//cout << sum_below(2000000) << "\n";
+    return 0;
+	}
