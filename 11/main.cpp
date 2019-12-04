@@ -34,27 +34,42 @@ int main(){
 		}
 
 	}
-
-	int product;
-	int highest_product;
-	int highesti;
-	int highestj;
-	for (int j=0;j<=16;j++)
+	for (int j=0;j<=19;j++)
 	{
 		for (int i=0;i<=19;i++)
+		{
+			cout << array[j][i] << "	";
+		}
+		cout << ";" << "\n";
+	}
+	cout << "\n";
+
+	int product = 1;
+	int highest_product = 0;
+	int highesti;
+	int highestj;
+	string direction;
+	int num = 0;
+
+	for (int j=0;j<=16;j++)
+	{
+		for (int i=0;i<=18;i++)
 		{
 			product = 1;
 			for (int k=0;k<=3;k++){
 				product = product * array[j+k][i];
 			}
-			if (i == 19 && j == 16) {
-				cout << product << "\n";
+			if (i == 18 && j == 16) {
+				//cout << "Columns:	" << product << "\n";
 			}
-		}
-		if (product > highest_product) {
-			highest_product = product;
-			highesti = i;
-			highestj = j;
+			if (product > highest_product) {
+				direction = "down";
+				cout << num << ": " << "i:	" << i << "	" << "j:	" << j << "	"<< direction << "		" << product << "\n";
+				num++;
+				highest_product = product;
+				highesti = i;
+				highestj = j;
+			}
 		}
 	}
 
@@ -67,37 +82,43 @@ int main(){
 				product = product * array[j+k][i+k];
 			}
 			if (i == 8 && j == 6) {
-				cout << array[j][i] << "\n";
-				cout << product << "\n";
+				//cout << array[j][i] << "\n";
+				//cout << "Right-Down:	" << product << "\n";
 			}
-		}
-		if (product > highest_product) {
-			highest_product = product;
-			highesti = i;
-			highestj = j;
+			if (product > highest_product) {
+				direction = "right-down";
+				cout << num << ": " << "i:	" << i << "	" << "j:	" << j << "	"<< direction << "	" << product << "\n";
+				num++;
+				highest_product = product;
+				highesti = i;
+				highestj = j;
+			}
 		}
 	}
 
 	for (int j=0;j<=16;j++)
 	{
-		for (int i=3;i<=19;i++)
+		for (int i=3;i<=18;i++)
 		{
 			product = 1;
 			for (int k=0;k<=3;k++){
 				product = product * array[j+k][i-k];
 			}
-			if (i == 19 && j == 16) {
-				cout << product << "\n";
+			if (i == 3 && j ==16) {
+				//cout << "Left-Down:	" << product << "\n";
 			}
-		}
-		if (product > highest_product) {
-			highest_product = product;
-			highesti = i;
-			highestj = j;
+			if (product > highest_product) {
+				direction = "left-down";
+				cout << num << ": " << "i:	" << i << "	" << "j:	" << j << "	"<< direction << "	" << product << "\n";
+				num++;
+				highest_product = product;
+				highesti = i;
+				highestj = j;
+			}
 		}
 	}
 
-	for (int j=0;j<=19;j++)
+	for (int j=0;j<=18;j++)
 	{
 		for (int i=0;i<=16;i++)
 		{
@@ -105,146 +126,23 @@ int main(){
 			for (int k=0;k<=3;k++){
 				product = product * array[j][i+k];
 			}
-			if (i == 16 && j == 19) {
-				cout << product << "\n";
+			if (i == 16 && j == 18) {
+				//cout << "Rows:		" << product << "\n";
 			}
-		}
-		if (product > highest_product) {
-			highest_product = product;
-			highesti = i;
-			highestj = j;
+			if (product > highest_product) {
+				direction = "right";
+				cout << num << ": " << "i:	" << i << "	" << "j:	" << j << "	"<< direction << "	" << product << "\n";
+				num++;
+				highest_product = product;
+				highesti = i;
+				highestj = j;
+			}
 		}
 	}
 	cout << "\n" << "i: " << highesti << "	j: " << highestj;
+	cout << "	" << direction << "\n";
 	cout << "\n" << "Highest Product: " << highest_product << "\n";
 	cout << "Maximum Product: " << "96059601" << "\n";
 	cout << "Highest Int:	 " <<  "2147483647";
 	return 0;
 }
-
-			//for (int k=0;k<4;k++){
-			//	int x = i+k;
-			//	int y = i+k;
-			//	if (x > 19 || y > 19 || x < 0 || y < 0) {
-			//		product = 0;
-			//	} else {
-			//		product = product * array[i+k][j+k];
-			//	}
-			//}
-			//if (product > highest_product) {
-			//	highest_product = product;
-			//	cout << i << j << ": down right" << "\n";
-			//}
-			//cout << product << "\n";
-
-			//product = 1;
-			//for (int k=0;k<4;k++){
-			//	int x = i;
-			//	int y = i+k;
-			//	if (x > 19 || y > 19 || x < 0 || y < 0) {
-			//		product = 0;
-			//	} else {
-			//	product = product * array[i][j+k];
-			//	}
-			//}
-			//if (product > highest_product) {
-			//	highest_product = product;
-			//	cout << i << j << ": right" << "\n";
-			//}
-			//cout << product << "\n";
-
-			//product = 1;
-			//for (int k=0;k<4;k++){
-			//	int x = i-k;
-			//	int y = i+k;
-			//	if (x > 19 || y > 19 || x < 0 || y < 0) {
-			//		product = 0;
-			//	} else {
-			//	product = product * array[i-k][j+k];
-			//	}
-			//}
-			//if (product > highest_product) {
-			//	highest_product = product;
-			//	cout << i << j << ": up right" << "\n";
-			//}
-			//cout << product << "\n";
-
-			//product = 1;
-			//for (int k=0;k<4;k++){
-			//	int x = i+k;
-			//	int y = i;
-			//	if (x > 19 || y > 19 || x < 0 || y < 0) {
-			//		product = 0;
-			//	} else {
-			//	product = product * array[i+k][j];
-			//	}
-			//}
-			//if (product > highest_product) {
-			//	highest_product = product;
-			//	cout << i << j << ": down" << "\n";
-			//}
-			//cout << product << "\n";
-
-			//product = 1;
-			//for (int k=0;k<4;k++){
-			//	int x = i-k;
-			//	int y = j;
-			//	if (x > 19 || y > 19 || x < 0 || y < 0) {
-			//		product = 0;
-			//	} else {
-			//	product = product * array[i-k][j];
-			//	}
-			//}
-			//if (product > highest_product) {
-			//	highest_product = product;
-			//	cout << i << j << ": up" << "\n";
-			//}
-			//cout << product << "\n";
-
-			//product = 1;
-			//for (int k=0;k<4;k++){
-			//	int x = i+k;
-			//	int y = i-k;
-			//	if (x > 19 || y > 19 || x < 0 || y < 0) {
-			//		product = 0;
-			//	} else {
-			//	product = product * array[i+k][j-k];
-			//	}
-			//}
- 			//if (product > highest_product) {
-			//	highest_product = product;
-			//	cout << i << j << ": down left" << "\n";
-			//}
-			//cout << product << "\n";
-
-			//product = 1;
-			//for (int k=0;k<4;k++){
-			//	int x = i;
-			//	int y = i-k;
-			//	if (x > 19 || y > 19 || x < 0 || y < 0) {
-			//		product = 0;
-			//	} else {
-			//	product = product * array[i][j-k];
-			//	}
-			//}
-			//if (product > highest_product) {
-			//	highest_product = product;
-			//	cout << i << j << ": left" << "\n";
-			//}
-			//cout << product << "\n";
-
-			//product = 1;
-			//for (int k=0;k<4;k++){
-			//	int x = i-k;
-			//	int y = i-k;
-			//	if (x > 19 || y > 19 || x < 0 || y < 0) {
-			//		product = 0;
-			//	} else {
-			//	product = product * array[i-k][j-k];
-			//	}
-			//}
-			//if (product > highest_product) {
-			//	highest_product = product;
-			//	cout << i << j << ": up left" << "\n";
-			//}
-			//cout << product << "\n";
