@@ -1,15 +1,16 @@
-module Triangular
 
 function getFactors(x)
     sum = 2
-
-    for i = 2:x/2
-        if x%i == 0
-            #print(i, ", ")
-            sum = sum + 1
+    max = x
+    i = 2
+    while i < max
+        if x % i == 0
+            #println("i: ", i)
+            max = x/i
+            sum = sum + 2
         end
+        i -= -1
     end
-    print(sum, "\n")
     return sum
 end
 
@@ -17,7 +18,7 @@ function triangle(x)
     index = 1
     triangle = 1
     while true
-        #println(triangle, ": ")
+        #print(triangle, ": ")
         if getFactors(triangle) > x
             return triangle
         end
@@ -27,4 +28,3 @@ function triangle(x)
     return 0
 end
 println("output: ", triangle(500))
-end

@@ -1,0 +1,21 @@
+chains = (2+1)*2
+
+loop i = 3 to 20
+    #2 chains = 6
+    #3 chains = 20
+    temp = (i+1) + chains = 10
+    chains = 2*(chains(2,2) + (i + 1))
+    #4 chains = 70
+    chains = 2*(chains + chains(3,2) + (i+1))
+    temp = chains/2 + temp + (i+1)
+    #5 chains = 2*(chains + chains(4,3) + chains(4,2) + (i+1))
+
+    x, y
+    chains = 0
+    chains = 2*(chains + (y+1))
+    for j = x - 1 to 2
+        chains = chains + 2*(chains(x,j))
+    end
+
+
+end
