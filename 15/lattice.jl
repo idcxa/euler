@@ -1,28 +1,20 @@
-function chains(x, y)
 
-    while j <= x -1
-        chains = chains + cha
+#https://projecteuler.net/problem=15
 
-end
+#Starting in the top left corner of a 2×2 grid,
+#and only being able to move to the right and down,
+#there are exactly 6 routes to the bottom right corner.
 
-function lattice(x, y)
+#How many such routes are there through a 20×20 grid?
 
-    chains = 0
-    chains = 2*(chains + (x+1))
-
-    j = 2
-    while j <= x - 1
-        chains = chains + 2*(lattice(x-1,j))
-        println("lattice(", x-1, ", ", j, "), chains = ", chains)
-        j += 1
-    end
-
+function lattice(y,x)
     if y == 1
-        println("y = 1")
-        chains = (x+1)
+        return y+x
+    elseif y == x
+        return lattice(y-1,x)*2
+    else
+        return lattice(y,x-1) + lattice(y-1,x)
     end
-
-    return chains
 end
 
-println(lattice(3,1))
+println(lattice(6,6))
