@@ -1,0 +1,19 @@
+sort names by first letter
+    for l = a:z
+        sort names by second letter
+                for a:z
+                    sort names by third letter
+                        for a:z
+
+bubble()
+
+function sort(x)
+    bubble()
+        for l = a:z
+            if letter[0] = l
+                sort(x+1)
+            end
+        end
+end
+
+sort(0)
