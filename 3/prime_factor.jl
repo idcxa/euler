@@ -1,4 +1,7 @@
-using Base
+
+# The prime factors of 13195 are 5, 7, 13 and 29.
+
+# What is the largest prime factor of the number 600851475143 ?
 
 function isPrime(x)
     if x == 1
@@ -24,25 +27,15 @@ function isPrime(x)
     end
 end
 
-function simplePrime(x)
-    for i = 2:sqrt(x)
-        if x % i == 0
-            return false
+function largest(x)
+    largest = 0
+    for i = 1:sqrt(x)
+        if x % i == 0 && isPrime(i)
+            println(i)
+            largest = i
         end
     end
-    return true
+    return largest
 end
 
-function summation(x)
-    sum = 0
-    for i = 2:x
-        if Base.isprime(i)
-            sum = sum + i
-            #println(i)
-        end
-    end
-    return sum
-end
-
-println("sum = ", summation(2000000))
-
+println("largest = ", largest(600851475143))

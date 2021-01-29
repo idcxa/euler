@@ -18,3 +18,4 @@ function Smallest_Multiple(x)
 end
 
 print(Smallest_Multiple(20))
+

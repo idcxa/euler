@@ -18,3 +18,4 @@ function lattice(y,x)
 end
 
 println(lattice(6,6))
+
