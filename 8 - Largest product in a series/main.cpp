@@ -16,9 +16,9 @@ int separate(string num){
 			cout << arr[x];
 			products[i] = products[i] * arr[x];
 		}
-		
+
 		cout << "=" << products[i] << "\n";
-	}	
+	}
 	long long int largest;
 	int largesti;
 	for (int i=0;i<=length-adj+1;i++) {

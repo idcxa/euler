@@ -1,0 +1,8 @@
+name = "PowerDigitSum"
+uuid = "2e8226c9-9c83-4b69-b974-a0316aab4108"
+authors = ["izzy 🌺🌺 <cassell.izzy@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+PlotlyBase = "a03496cd-edff-5a9b-9e67-9cda94a718b5"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
