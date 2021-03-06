@@ -8,7 +8,6 @@ function fibonacci(a,b,m)
     end
     sum = sum + fibonacci(b,a+b,m)
     return sum
-    #return fibonacci(b,a+b)+b
 end
 
 println("OUTPUT = ", fibonacci(1,2,4000000))
