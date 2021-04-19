@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 int palindrome(int x) {
     string str = to_string(x);
     int l = str.length();
@@ -23,7 +22,6 @@ int main() {
 	    }
 	}
     }
-    cout << n << endl;
-    //cout << palindrome(9009);
+    printf("output: %d\n", n);
 }
 
